@@ -76,19 +76,19 @@ const Tictactoe = () => {
                 {/* game bg */}
                 <div className="px-4 max-w-xl my-4 py-4 mx-auto ">
                     {/* game layout */}
-                    <div className="px-4 border-2 max-w-xl grid grid-cols-3 py-4 mx-auto font-extrabold ">
+                    <div className=" px-1 md:px-4  max-w-xl grid grid-cols-3 py-4 mx-auto font-extrabold rounded-full ">
                         {/* row 1 */}
-                            <button id="btn1" className=" border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 0)}}></button>
-                            <button id="btn2" className=" border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 1)}}></button>
-                            <button id="btn3" className=" border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 2)}}></button>
+                            <button id="btn1" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-b-4 border-r-4 " onClick={(e) => {toggle(e , 0)}}></button>
+                            <button id="btn2" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-b-4 border-r-4 border-l-4" onClick={(e) => {toggle(e , 1)}}></button>
+                            <button id="btn3" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-b-4 border-l-4" onClick={(e) => {toggle(e , 2)}}></button>
                         {/* row 2 */}
-                            <button id="btn4" className=" border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 3)}}></button>
-                            <button id="btn5" className=" border-black text-3xl md:text-4xl px-5 py-2 md:min-h-[120px] min-h-16 min-w-full border-4 " onClick={(e) => {toggle(e , 4)}}></button>
-                            <button id="btn6" className=" border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 5)}}></button>
+                            <button id="btn4" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-t-4 border-b-4 border-r-4" onClick={(e) => {toggle(e , 3)}}></button>
+                            <button id="btn5" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2 md:min-h-[120px] min-h-16 min-w-full border-4 " onClick={(e) => {toggle(e , 4)}}></button>
+                            <button id="btn6" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full  border-t-4 border-b-4 border-l-4" onClick={(e) => {toggle(e , 5)}}></button>
                         {/* row 3 */}
-                            <button id="btn7" className=" border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4 " onClick={(e) => {toggle(e , 6)}}></button>
-                            <button id="btn8" className="border-black text-3xl md:text-4xl px-5 py-2  md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 7)}}></button>
-                            <button id="btn9" className="border-black text-3xl md:text-4xl px-5 py-2   md:min-h-[120px] min-h-16 min-w-full border-4" onClick={(e) => {toggle(e , 8)}}></button>
+                            <button id="btn7" className=" border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full  border-t-4 border-r-4 " onClick={(e) => {toggle(e , 6)}}></button>
+                            <button id="btn8" className="border-black text-3xl md:text-4xl px-2 md:px-5 py-2  md:min-h-[120px] min-h-16 min-w-full  border-t-4 border-l-4 border-r-4" onClick={(e) => {toggle(e , 7)}}></button>
+                            <button id="btn9" className="border-black text-3xl md:text-4xl px-2 md:px-5 py-2   md:min-h-[120px] min-h-16 min-w-full  border-t-4 border-l-4 " onClick={(e) => {toggle(e , 8)}}></button>
                     </div>
                 </div>
                 {/* reset button */}
