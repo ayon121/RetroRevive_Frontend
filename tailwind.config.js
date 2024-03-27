@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily : {
-
-        Hind : "'Hind Siliguri', sans-serif;"
+        Rubik : "'Rubik Scribble', system-ui" ,
+        Hind : "'Hind Siliguri', sans-serif;",
+        Titan : "'Titan One', sans-serif"
       }
     },
   },
