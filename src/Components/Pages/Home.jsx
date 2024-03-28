@@ -8,14 +8,12 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-            <title>GRT | Home</title>
-        </Helmet>
-            <Navbar></Navbar>
+                <title>GRT | Home</title>
+            </Helmet>
             {/* body */}
-            <div className="min-h-screen">
-                <Banner></Banner>
-                <TopGames></TopGames>
-            </div>
+            <Banner></Banner>
+            <TopGames></TopGames>
+
             <Footer>
             </Footer>
         </div>
