@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import TopGames from "../TopGames/TopGames";
 
