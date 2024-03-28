@@ -1,0 +1,5 @@
+.featuredimage {
+    background-blend-mode: darken;
+    background-image: url('../../assets/pagination.jpg');
+    background-size: cover;
+}

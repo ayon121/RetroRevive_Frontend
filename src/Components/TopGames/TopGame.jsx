@@ -7,7 +7,7 @@ const TopGame = () => {
             <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="games" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    Shoes!
+                    TIC TAC TOE
                     <div className="badge badge-secondary">TOP</div>
                 </h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
