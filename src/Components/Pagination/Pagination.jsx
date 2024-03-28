@@ -3,7 +3,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import './Pagination.css'
 const Pagination = () => {
     const [text] = useTypewriter({
-        words: ['discover and share the latest gaming products'],
+        words: ['discover and share our latest gaming products'],
         loop : 6
       })
     return (
