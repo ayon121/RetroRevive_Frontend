@@ -15,7 +15,7 @@ const Products = () => {
                 </div>
             </Marquee>
             <div className="flex justify-center mb-5 px-2">
-                <button  className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>See More</button>
+                <button  className='btn bg-white text-black font-bold hover:text-pink-600/40 border-black hover:border-pink-600'>See More</button>
             </div>
 
         </div>

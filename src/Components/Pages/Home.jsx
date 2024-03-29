@@ -5,10 +5,10 @@ import TopGames from "../TopGames/TopGames";
 import Pagination from "../Pagination/Pagination";
 import Products from "../Products/Products";
 import RedeemPointsHome from "../RedeemPoints/RedeemPointsHome";
-
+import websitebg from "../../assets/webbg.jpg"
 const Home = () => {
     return (
-        <div>
+        <div className=""  style={{ backgroundImage: `url(${websitebg})`, background : 'fit'  }}>
             <Helmet>
                 <title>RETRO REVIVE | Home</title>
             </Helmet>
