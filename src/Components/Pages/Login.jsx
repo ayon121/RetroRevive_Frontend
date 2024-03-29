@@ -68,10 +68,10 @@ const Login = () => {
                 <title>RETRO REVIVE | Login</title>
             </Helmet>
             <Navbar></Navbar>
-            <div className="flex  justify-center w-full h-screen items-center font-Hind px-3 mt-7">
-                <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >
+            <div className="flex  justify-center w-full h-auto items-center font-Hind px-3 mt-7">
+                <div className=" max-w-4xl mx-auto rounded-2xl flex h-auto py-8 px-3 mt-11" >
                     {/* login form */}
-                    <div className="flex flex-col  py-1 px-8  border-l-4 border-pink-500 h-full">
+                    <div className="flex flex-col  py-1 px-8  border-l-4 border-pink-500 h-auto">
                         <form className='flex flex-col' onSubmit={handlelogin}>
                             <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-pink-500">Login Now</h1>
                             <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="email" name="email" placeholder="email" />
