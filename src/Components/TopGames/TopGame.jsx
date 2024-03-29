@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FaHeart } from "react-icons/fa";
 const TopGame = () => {
     return (
-        <div className="card w-auto text-white shadow-2xl  mb-3 border-4  bg-gradient-to-r from-slate-400/40   to-sky-300/70  lg:rounded-b-3xl border-b-2 border-sky-800 duration-500 hover:top-3 ">
+        <div className="card w-auto text-white shadow-2xl  mb-3 border-4  bg-gradient-to-r from-slate-700/50   to-sky-300/70  lg:rounded-b-3xl border-b-2 border-sky-800 duration-500 hover:top-3 ">
             <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="games" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
