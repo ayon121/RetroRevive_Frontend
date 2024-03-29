@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import TopGames from "../TopGames/TopGames";
 import Pagination from "../Pagination/Pagination";
 import Products from "../Products/Products";
+import RedeemPointsHome from "../RedeemPoints/RedeemPointsHome";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <TopGames></TopGames>
             <Pagination></Pagination>
             <Products></Products>
+            <RedeemPointsHome></RedeemPointsHome>
 
             <Footer>
             </Footer>
