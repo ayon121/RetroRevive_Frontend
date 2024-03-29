@@ -43,7 +43,7 @@ const GameDetails = () => {
         <div>
             { }
             <Helmet>
-                <title>GRT | GameDetails</title>
+                <title>RETRO REVIVE | GameDetails</title>
             </Helmet>
             <Navbar></Navbar>
             <div className='max-w-6xl px-3 mx-auto mt-5 font-Hind min-h-screen'>

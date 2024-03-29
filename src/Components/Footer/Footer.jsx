@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer p-10 bg-base-300 text-base-content border-t-4 border-double border-[#3fb43b] md:rounded-tr-full">
             <div className="font-Hind font-bold ">
                 <h1 className=" flex items-center gap-1">
-                    <span className='text-2xl md:text-3xl lg:text-4xl'>GRT</span>
+                    <span className='text-2xl md:text-3xl lg:text-4xl'>RETRO REVIVE</span>
                     <span className='text-xl  md:text-2xl lg:text-3xl text-[#3fb43b]'><IoGameController /></span>
                     <span className="text-lg md:text-lg lg:text-xl">Reviews</span>
                 </h1>

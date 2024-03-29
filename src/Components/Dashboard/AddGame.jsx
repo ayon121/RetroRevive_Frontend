@@ -13,7 +13,7 @@ const AddGame = () => {
         const description = form.description.value;
         const review = { title,img  , description}
 
-        fetch('https://grt-backend.vercel.app/games',
+        fetch('https://RETRO REVIVE-backend.vercel.app/games',
             {
                 method: 'POST',
                 headers: {

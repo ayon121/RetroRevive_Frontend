@@ -65,7 +65,7 @@ const Login = () => {
     return (
         <div>
             <Helmet>
-                <title>GRT | Login</title>
+                <title>RETRO REVIVE | Login</title>
             </Helmet>
             <Navbar></Navbar>
             <div className="flex  justify-center w-full h-screen items-center font-Hind px-3">

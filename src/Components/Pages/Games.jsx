@@ -19,7 +19,7 @@ const Games = () => {
     return (
         <div className='font-Hind'>
             <Helmet>
-                <title>GRT | Games</title>
+                <title>RETRO REVIVE | Games</title>
             </Helmet>
     
             <Navbar></Navbar>

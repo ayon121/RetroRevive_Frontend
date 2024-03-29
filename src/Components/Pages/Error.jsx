@@ -7,7 +7,7 @@ const Error = () => {
     return (
         <div className=" h-screen">
             <Helmet>
-            <title>GRT | Error</title>
+            <title>RETRO REVIVE | Error</title>
         </Helmet>
     
             <Navbar></Navbar>

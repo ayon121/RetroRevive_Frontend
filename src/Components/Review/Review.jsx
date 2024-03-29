@@ -40,7 +40,7 @@ const Review = () => {
         const ratings = form.number.value;
         const review = { name, sms  , gameid  , ratings, Userlocation , UserEmail}
 
-        fetch('https://grt-backend.vercel.app/reviews',
+        fetch('https://RETRO REVIVE-backend.vercel.app/reviews',
             {
                 method: 'POST',
                 headers: {

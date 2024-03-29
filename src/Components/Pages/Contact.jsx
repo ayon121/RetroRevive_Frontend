@@ -14,7 +14,7 @@ const Contact = () => {
     return (
         <div>
         <Helmet>
-            <title>GRT | Contact</title>
+            <title>RETRO REVIVE | Contact</title>
         </Helmet>
         <Navbar></Navbar>
         <div className="flex  justify-center w-full h-screen items-center font-Hind px-3">

@@ -69,7 +69,7 @@ const About = () => {
     return (
         <div>
             <Helmet>
-                <title>GRT | About</title>
+                <title>RETRO REVIVE | About</title>
             </Helmet>
 
             <Navbar></Navbar>
@@ -78,11 +78,11 @@ const About = () => {
             </div>
             <div className='max-w-6xl mx-auto px-3 font-Hind'>
                 <div>
-                    <p className='text-lg font-semibold pb-3'>Welcome to GRT REVIEWS, your ultimate destination for game reviews, recommendations, and insights! We are passionate gamers who have come together to create a platform where fellow enthusiasts can discover new games, share their thoughts, and connect with like-minded individuals.</p>
+                    <p className='text-lg font-semibold pb-3'>Welcome to RETRO REVIVE REVIEWS, your ultimate destination for game reviews, recommendations, and insights! We are passionate gamers who have come together to create a platform where fellow enthusiasts can discover new games, share their thoughts, and connect with like-minded individuals.</p>
                 </div>
                 <div>
                     <h1 className='mt-2 text-2xl font-bold'>Our Mission</h1>
-                    <p className='text-lg font-semibold pb-3 pt-2'> At GRT our mission is to provide an inclusive and welcoming space for gamers of all backgrounds and preferences. We believe that gaming is not just a hobby but a vibrant community that brings people together, fosters creativity, and sparks joy. Our goal is to celebrate the diversity of gaming and empower our users to explore new experiences, express their opinions, and connect with others who share their passion.</p>
+                    <p className='text-lg font-semibold pb-3 pt-2'> At RETRO REVIVE our mission is to provide an inclusive and welcoming space for gamers of all backgrounds and preferences. We believe that gaming is not just a hobby but a vibrant community that brings people together, fosters creativity, and sparks joy. Our goal is to celebrate the diversity of gaming and empower our users to explore new experiences, express their opinions, and connect with others who share their passion.</p>
                 </div>
                 <div>
                     <h1 className='mt-2 text-2xl font-bold'>Our Reputation From 2017-2023</h1>
@@ -120,7 +120,7 @@ const About = () => {
                     <h1 className='mt-2 text-2xl font-bold'>Exclusive Content</h1>
                     <p className='text-lg font-semibold pb-3 pt-2'>Stay updated with the latest news, interviews, and features from the world of gaming with our exclusive content. From developer interviews to behind-the-scenes insights, we offer unique perspectives that enrich your gaming experience and keep you informed about the industry latest trends and developments.</p>
                     <br />
-                    <p className='text-lg font-semibold pb-3 pt-2'>Thank you for choosing GRT as your go-to destination for all things gaming. We look forward to embarking on this exciting journey with you!
+                    <p className='text-lg font-semibold pb-3 pt-2'>Thank you for choosing RETRO REVIVE as your go-to destination for all things gaming. We look forward to embarking on this exciting journey with you!
 
                     </p>
                 </div>
