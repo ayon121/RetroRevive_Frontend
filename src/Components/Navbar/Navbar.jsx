@@ -59,10 +59,10 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end">
                         {
-                            user ? <button onClick={handlelogOut} className="relative h-14 w-auto px-4 origin-top transform  border-2 border-black text-xl text-white before:absolute before:top-0 before:block before:h-0 before:w-full before:duration-500 hover:text-pink-400 hover:before:absolute hover:before:left-0 hover:before:-z-10 hover:before:h-full hover:before:bg-black/90 hover:before:rounded-3xl rounded-full bg-black/50 font-bold tracking-widest">Logout</button>
+                            user ? <button onClick={handlelogOut} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 rounded-2xl'>Logout</button>
                                 :
                                 <Link to="/login">
-                                    <button className="relative h-14 w-auto px-4 origin-top transform  border-2 border-black text-xl text-white before:absolute before:top-0 before:block before:h-0 before:w-full before:duration-500 hover:text-pink-400 hover:before:absolute hover:before:left-0 hover:before:-z-10 hover:before:h-full hover:before:bg-black/90 hover:before:rounded-3xl rounded-full bg-black/50 font-bold tracking-widest">Login</button>
+                                    <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 rounded-2xl'>Login</button>
                                 </Link>
                         }
 
