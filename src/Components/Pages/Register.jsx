@@ -68,20 +68,20 @@ const Register = () => {
             <Helmet>
                 <title>RETRO REVIVE | Register</title>
             </Helmet>
-            <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3 mt-11" >
+            <div className=" max-w-4xl mx-auto rounded-2xl flex h-auto py-8 px-3 mt-11" >
                 {/* login form */}
-                <div className="flex flex-col  py-1 px-8  border-l-4 border-[#3fb43b] h-full">
+                <div className="flex flex-col  py-1 px-8  border-l-4 border-pink-500 h-full">
                     <form onSubmit={handleRegister} className='flex flex-col'>
-                        <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-[#3fb43b]">Register Now</h1>
-                        <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="text" name="name" placeholder="User Name" />
-                        <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="email" name="email" placeholder="email" />
-                        <input className="py-1 px-3  my-2 border-2 border-[#3fb43b] rounded-lg" type="password" name="password" placeholder="password" />
-                        <input className="btn border-2 border-[#3fb43b] hover:bg-[#3fb43b] hover:text-white" type="submit" value="Register" />
+                        <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-pink-500">Register Now</h1>
+                        <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="text" name="name" placeholder="User Name" />
+                        <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="email" name="email" placeholder="email" />
+                        <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="password" name="password" placeholder="password" />
+                        <input className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 w-full' type="submit" value="Register" />
                     </form>
                     <div className="text-center ">
-                        <p className="text-[#3fb43b] pb-1">or login using google</p>
-                        <button onClick={HandleGoogleLogin} className="btn border-2 border-[#3fb43b] w-full hover:bg-[#3fb43b] hover:text-white"><FcGoogle></FcGoogle> Google</button>
-                        <p className='pt-2 '>Already have a account? <Link to="/login"> <button className='text-[#3fb43b] underline'>Login Now</button></Link></p>
+                        <p className="text-sky-500 pb-1">or login using google</p>
+                        <button onClick={HandleGoogleLogin} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 w-full'><FcGoogle></FcGoogle> Google</button>
+                        <p className='pt-2 text-sky-400'>Already have a account? <Link to="/login"> <button className='text-pink-500 underline'>Login Now</button></Link></p>
 
                     </div>
                 </div>
