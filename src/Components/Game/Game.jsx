@@ -44,7 +44,7 @@ const Game = ({ game }) => {
                         <Link to={`/allreviews/${_id}`}><button className="btn btn-outline btn-success">ALL Reviews</button></Link>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={`/tictactoe`}><button className="btn btn-outline btn-success">Play</button></Link>
+                        <Link to={`/${_id}`}><button className="btn btn-outline btn-success">Play</button></Link>
                     </div>
                     {
                         singleuserInfo[0]?.userRole === 'admin' && <div className="card-actions justify-end">

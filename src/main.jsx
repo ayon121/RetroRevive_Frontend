@@ -30,6 +30,8 @@ import AddGame from './Components/Dashboard/AddGame';
 import DeleteReviews from './Components/Dashboard/DeleteReviews';
 import ReviewEdit from './Components/Review/ReviewEdit';
 import Tictactoe from './Components/Playstation/TicTacToe/Tictactoe';
+import MemoryGame from './Components/Playstation/MemoryGame/MemoryGame';
+
 
 
 const queryClient = new QueryClient()
@@ -80,8 +82,13 @@ const router = createBrowserRouter([
 
       },
       {
-        path: "/tictactoe",
+        path: "/65fb4bd65f39b097fab9ca70",
         element: <PrivateRoute><Tictactoe></Tictactoe></PrivateRoute>
+
+      },
+      {
+        path: "/65f0a8a8ae783eabd1838b5e",
+        element: <PrivateRoute><MemoryGame></MemoryGame></PrivateRoute>
 
       }
     ]
