@@ -27,7 +27,7 @@ const Game = ({ game }) => {
             });
     }
     return (
-        <div className="card card-compact w-auto h-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-auto h-96 text-white  shadow-xl  mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70 border-sky-300">
             <figure>
                 <img src={img} alt="cover image" />
             </figure>
@@ -38,17 +38,17 @@ const Game = ({ game }) => {
                 </div>
                 <div className='flex gap-3 px-2'>
                     <div className="card-actions justify-end">
-                        <Link to={`/givereviews/${_id}`}><button className="btn btn-outline btn-success">Give Review</button></Link>
+                        <Link to={`/givereviews/${_id}`}><button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Give Review</button></Link>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={`/allreviews/${_id}`}><button className="btn btn-outline btn-success">ALL Reviews</button></Link>
+                        <Link to={`/allreviews/${_id}`}><button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>ALL Reviews</button></Link>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={`/${_id}`}><button className="btn btn-outline btn-success">Play</button></Link>
+                        <Link to={`/${_id}`}><button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Play</button></Link>
                     </div>
                     {
                         singleuserInfo[0]?.userRole === 'admin' && <div className="card-actions justify-end">
-                        <button onClick={handleGameDelete} className="btn btn-outline btn-success">Delete</button>
+                        <button onClick={handleGameDelete} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Delete</button>
                     </div>
                     }
                     
