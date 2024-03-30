@@ -24,9 +24,8 @@ const MemoryGame = () => {
         { id: 8, img: '', stat: "" },
         { id: 8, img: '', stat: "" },
 
-    ])
+    ].sort(()=> Math.random() - 0.5))
 
-    console.log(Items);
     return (
         <div className="backgrnd ">
             <Navbar></Navbar>
@@ -37,7 +36,7 @@ const MemoryGame = () => {
                 <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70">
                     <div className="grid grid-cols-4 gap-3">
                         {
-                            Items.map(item => <GameCard item={item}></GameCard>)
+                            Items.map((item , index) => <GameCard key={index}  item={item}></GameCard>)
                         }
                     </div>
                 </div>
