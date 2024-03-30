@@ -21,22 +21,22 @@ const Navbar = () => {
     refetch()
 
     const navlinks = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/games">Games</NavLink></li>
+        <li><NavLink to="/" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Home</NavLink></li>
+        <li><NavLink to="/games" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Games</NavLink></li>
         {
             singleuserInfo[0]?.userRole === 'admin' && <div>
-                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                <li ><NavLink to="/dashboard" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Dashboard</NavLink></li>
             </div>
         }
 
-        <li><NavLink to="/about">About Us</NavLink></li>
-        <li><NavLink to="/contact">Contact Us</NavLink></li>
+        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white  hover:text-pink-400  ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>About Us</NavLink></li>
+        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Contact Us</NavLink></li>
 
     </>
 
     return (
         <div className=''>
-            <div className='w-full bg-gradient-to-r from-pink-700/40  via-purple-950 to-sky-950/70   border-b-2 border-sky-800'>
+            <div className='w-full bg-gradient-to-r from-pink-700/40  via-purple-950 to-sky-950/70   border-b-2 border-sky-300'>
                 <div className="navbar font-Hind px-1 md:px-3 max-w-7xl mx-auto">
                     <div className="navbar-start">
                         <div className="dropdown">

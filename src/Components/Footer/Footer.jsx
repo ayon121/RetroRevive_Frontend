@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
-        <footer className="footer p-10  bg-gradient-to-r from-pink-700/40  via-purple-950 to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-800 text-white border-t-4 border-double  md:rounded-tr-full">
+        <footer className="footer p-10  bg-gradient-to-r from-pink-700/40  via-purple-950 to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 text-white border-t-4 border-double  md:rounded-tr-full">
             <div className="font-Hind font-bold ">
                 <h1 className=" flex items-center gap-1">
                     <span className='text-2xl md:text-3xl lg:text-4xl font-Rubik'>RETRO REVIVE</span>

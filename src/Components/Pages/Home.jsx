@@ -5,7 +5,6 @@ import TopGames from "../TopGames/TopGames";
 import Pagination from "../Pagination/Pagination";
 import Products from "../Products/Products";
 import RedeemPointsHome from "../RedeemPoints/RedeemPointsHome";
-import websitebg from "../../assets/webbg.jpg"
 import Tournaments from "../Tournaments/Tournaments";
 import Navbar from "../Navbar/Navbar";
 import '../PageCSS/Home.css'
