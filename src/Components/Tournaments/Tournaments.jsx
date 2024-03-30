@@ -2,9 +2,17 @@ import Title from "../Title/Title";
 import teamA from "../../assets/TeamAlbertos.png"
 import teamB from "../../assets/TeamAvengers.png"
 import vs from "../../assets/Vs.png"
+import Swal from "sweetalert2";
 
 
 const Tournaments = () => {
+    const joinbtn = () => {
+        Swal.fire({
+            icon: "info",
+            title: "Update Will Come Soon",
+            text: "I am working on it , Thanks for your interest.",   
+          })
+    }
     return (
         <div>
             <Title title={'Tournaments'}></Title>
@@ -24,7 +32,7 @@ const Tournaments = () => {
                 </div>
             </div>
             <div className="flex justify-center mb-9">
-            <button  className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>JOIN NOW</button>
+            <button onClick={joinbtn} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>JOIN NOW</button>
             </div>
 
         </div>
