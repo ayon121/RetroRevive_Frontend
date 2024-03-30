@@ -1,15 +1,11 @@
 import bannerimage from "../../assets/RETROBanner.png"
-import Navbar from "../Navbar/Navbar";
 import "./Banner.css"
 const Banner = () => {
     return (
         <div>
 
             <div className=" min-h-screen h-auto w-full banner mb-4" style={{ backgroundImage: `url(${bannerimage})` }}>
-                <div className="">
-                    <Navbar></Navbar>
-                </div>
-                <div className="hero hero-overlay bg-opacity-25 md:bg-opacity-5 mt-5 "></div>
+                <div className="hero hero-overlay bg-opacity-25 md:bg-opacity-5"></div>
                 <div className=" text-left text-neutral-content mt-11 lg:mt-10  pt-8 lg:pt-7  pb-4 lg:pb-2 ml-8 ">
                     <div className="max-w-6xl px-4 ">
                         <h1 className="mb-5 text-5xl font-bold uppercase">Rediscover Retro</h1>
