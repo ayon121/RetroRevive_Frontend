@@ -8,9 +8,10 @@ import RedeemPointsHome from "../RedeemPoints/RedeemPointsHome";
 import websitebg from "../../assets/webbg.jpg"
 import Tournaments from "../Tournaments/Tournaments";
 import Navbar from "../Navbar/Navbar";
+import '../PageCSS/Home.css'
 const Home = () => {
     return (
-        <div className=""  style={{ backgroundImage: `url(${websitebg})`, background : 'fit'  }}>
+        <div className="backgrnd">
             <Helmet>
                 <title>RETRO REVIVE | Home</title>
             </Helmet>
