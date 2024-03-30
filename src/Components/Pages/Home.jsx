@@ -6,6 +6,7 @@ import Pagination from "../Pagination/Pagination";
 import Products from "../Products/Products";
 import RedeemPointsHome from "../RedeemPoints/RedeemPointsHome";
 import websitebg from "../../assets/webbg.jpg"
+import Tournaments from "../Tournaments/Tournaments";
 const Home = () => {
     return (
         <div className=""  style={{ backgroundImage: `url(${websitebg})`, background : 'fit'  }}>
@@ -18,6 +19,7 @@ const Home = () => {
             <Pagination></Pagination>
             <Products></Products>
             <RedeemPointsHome></RedeemPointsHome>
+            <Tournaments></Tournaments>
 
             <Footer>
             </Footer>
