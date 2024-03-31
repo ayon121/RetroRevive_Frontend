@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
 import { axiosSecure } from '../../Hooks/useAxiosSecure';
+import "../PageCSS/Home.css"
 const Register = () => {
     const { createUser, GoogleLogin } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -64,7 +65,7 @@ const Register = () => {
     }
 
     return (
-        <div className="flex flex-row-reverse  justify-center w-full h-screen items-center font-Hind px-3">
+        <div className="flex flex-row-reverse  justify-center w-full min-h-screen items-center font-Hind px-3 backgrnd">
             <Helmet>
                 <title>RETRO REVIVE | Register</title>
             </Helmet>
@@ -72,7 +73,7 @@ const Register = () => {
                 {/* login form */}
                 <div className="flex flex-col  py-1 px-8  border-l-4 border-pink-500 h-full">
                     <form onSubmit={handleRegister} className='flex flex-col'>
-                        <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-pink-500">Register Now</h1>
+                        <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-white">Register Now</h1>
                         <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="text" name="name" placeholder="User Name" />
                         <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="email" name="email" placeholder="email" />
                         <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="password" name="password" placeholder="password" />
