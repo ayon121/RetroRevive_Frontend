@@ -1,10 +1,11 @@
 
 import PropTypes from 'prop-types';
+import './MemoryCard.css'
 
 const GameCard = ({item}) => {
     return (
-        <div className='bg-sky-200/75 px-4 py-4 rounded-3xl'>
-            <img src={item.img} alt="puzzle img" />
+        <div className='bg-sky-200/75 px-4 py-4 rounded-3xl card'>
+            <img className='cardimg' src={item.img} alt="puzzle img" />
         </div>
     );
 };
