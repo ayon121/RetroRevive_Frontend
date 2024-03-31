@@ -4,9 +4,10 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { Helmet } from 'react-helmet';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import '../PageCSS/Home.css'
 
 const About = () => {
-    const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+    const colors = ['white', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
     const data = [
         {
@@ -67,22 +68,23 @@ const About = () => {
     };
 
     return (
-        <div>
+        <div className='backgrnd '>
             <Helmet>
                 <title>RETRO REVIVE | About</title>
             </Helmet>
 
             <Navbar></Navbar>
-            <div className='flex justify-center  font-bold font-Hind'>
+            <div className='flex justify-center  font-bold font-Hind text-white'>
                 <h1 className=' text-3xl md:text-4xl lg:text-5xl mb-5 mt-3'>About Us</h1>
             </div>
-            <div className='max-w-6xl mx-auto px-3 font-Hind'>
+            <div className='max-w-6xl mx-auto px-3 font-Hind text-white '>
                 <div>
-                    <p className='text-lg font-semibold pb-3'>Welcome to RETRO REVIVE REVIEWS, your ultimate destination for game reviews, recommendations, and insights! We are passionate gamers who have come together to create a platform where fellow enthusiasts can discover new games, share their thoughts, and connect with like-minded individuals.</p>
+                    <p className='text-lg font-semibold pb-3'>
+                        Welcome to Retro Revive, the ultimate destination for all retro gaming enthusiasts! Founded by Ayon Saha, Retro Revive is not just a website; it is a passion project dedicated to bringing back the golden age of gaming while providing an exciting and rewarding experience for our users.</p>
                 </div>
                 <div>
                     <h1 className='mt-2 text-2xl font-bold'>Our Mission</h1>
-                    <p className='text-lg font-semibold pb-3 pt-2'> At RETRO REVIVE our mission is to provide an inclusive and welcoming space for gamers of all backgrounds and preferences. We believe that gaming is not just a hobby but a vibrant community that brings people together, fosters creativity, and sparks joy. Our goal is to celebrate the diversity of gaming and empower our users to explore new experiences, express their opinions, and connect with others who share their passion.</p>
+                    <p className='text-lg font-semibold pb-3 pt-2'>At Retro Revive, we understand the allure of classic games and the nostalgia they evoke. Our platform offers a vast collection of retro games spanning across different consoles and genres, allowing users to relive their fondest gaming memories or discover timeless classics for the first time.</p>
                 </div>
                 <div>
                     <h1 className='mt-2 text-2xl font-bold'>Our Reputation From 2017-2023</h1>
@@ -109,18 +111,23 @@ const About = () => {
 
                 </div>
                 <div>
-                    <h1 className='mt-2 text-2xl font-bold'>Expert Reviews</h1>
-                    <p className='text-lg font-semibold pb-3 pt-2'>Our team of experienced reviewers meticulously assesses each game, providing in-depth analysis, critical insights, and honest opinions. Whether you are looking for the latest AAA blockbuster or a hidden indie gem, we have got you covered with comprehensive reviews that help you make informed decisions.</p>
+                    <h1 className='mt-2 text-2xl font-bold'>Best Returns of Your Time</h1>
+                    <p className='text-lg font-semibold pb-3 pt-2'>What sets Retro Revive apart is our unique points system. As you dive into the world of retro gaming on our platform, you will earn points for every achievement, high score, or milestone you reach. These points can then be redeemed for vouchers that can be used to purchase premium gaming products from our website.</p>
                 </div>
                 <div>
-                    <h1 className='mt-2 text-2xl font-bold'>Community Interaction</h1>
-                    <p className='text-lg font-semibold pb-3 pt-2'>We value the voices of our community members and encourage active participation through user reviews, ratings, and discussions. Share your thoughts, engage in friendly debates, and discover new perspectives from fellow gamers around the world. Together, we are building a vibrant community where every voice matters.</p>
+                    <h1 className='mt-2 text-2xl font-bold'>Best Collections</h1>
+                    <p className='text-lg font-semibold pb-3 pt-2'>We take pride in curating the best gaming products for our users. Whether you are in search of vintage consoles, rare cartridges, or the latest gaming accessories, Retro Revive has you covered. Our selection is meticulously chosen to ensure top-notch quality and authenticity, guaranteeing an unparalleled gaming experience.</p>
                 </div>
                 <div>
-                    <h1 className='mt-2 text-2xl font-bold'>Exclusive Content</h1>
-                    <p className='text-lg font-semibold pb-3 pt-2'>Stay updated with the latest news, interviews, and features from the world of gaming with our exclusive content. From developer interviews to behind-the-scenes insights, we offer unique perspectives that enrich your gaming experience and keep you informed about the industry latest trends and developments.</p>
+                    <h1 className='mt-2 text-2xl font-bold'>We Are Community</h1>
+                    <p className='text-lg font-semibold pb-3 pt-2'>But Retro Revive is more than just a marketplace; it is a community. We foster a vibrant and inclusive environment where gamers from all walks of life can come together to share their love for retro gaming. Our forums, blogs, and social media channels are buzzing with discussions, tips, and tricks, creating a space where friendships are forged and memories are made.</p>
                     <br />
-                    <p className='text-lg font-semibold pb-3 pt-2'>Thank you for choosing RETRO REVIVE as your go-to destination for all things gaming. We look forward to embarking on this exciting journey with you!
+                    <h1 className='mt-2 text-2xl font-bold'>Our Commitment</h1>
+                    <p className='text-lg font-semibold pb-3 pt-2'>At Retro Revive, we are committed to excellence in everything we do. From the seamless user experience on our website to the exceptional customer service we provide, we strive to exceed expectations at every turn. Our team is dedicated to ensuring that your journey with us is nothing short of extraordinary.</p>
+                    <br />
+                    <p className='text-lg font-semibold pb-3 pt-2'>Thank you for choosing Retro Revive as your go-to destination for all things retro gaming. Join us today, and let us embark on an unforgettable adventure down memory lane together!
+
+
 
                     </p>
                 </div>
