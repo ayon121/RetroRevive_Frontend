@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import OnPageReview from '../Review/OnPageReview';
 import Navbar from '../Navbar/Navbar';
 import { Helmet } from 'react-helmet';
+import "../PageCSS/Home.css"
 
 const GameDetails = () => {
     const { id } = useParams()
@@ -40,13 +41,13 @@ const GameDetails = () => {
 
 
     return (
-        <div>
+        <div className='backgrnd'>
             { }
             <Helmet>
                 <title>RETRO REVIVE | GameDetails</title>
             </Helmet>
             <Navbar></Navbar>
-            <div className='max-w-6xl px-3 mx-auto mt-5 font-Hind min-h-screen'>
+            <div className='max-w-6xl px-3 mx-auto mt-5 font-Hind min-h-screen text-white'>
                 <div>
                     <div className='flex justify-center mt-4 mb-4'>
                         <h1 className='text-4xl md:text-5xl font-bold'>Average Ratings {averageRatings || 0}</h1>
