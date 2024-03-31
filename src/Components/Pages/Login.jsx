@@ -11,6 +11,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../Navbar/Navbar';
 
 import { Helmet } from 'react-helmet';
+import '../PageCSS/Home.css'
+import Footer from '../Footer/Footer';
 
 const Login = () => {
     const { loginUser, GoogleLogin } = useContext(AuthContext)
@@ -63,7 +65,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='backgrnd'>
             <Helmet>
                 <title>RETRO REVIVE | Login</title>
             </Helmet>
@@ -73,7 +75,7 @@ const Login = () => {
                     {/* login form */}
                     <div className="flex flex-col  py-1 px-8  border-l-4 border-pink-500 h-auto">
                         <form className='flex flex-col' onSubmit={handlelogin}>
-                            <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-pink-500">Login Now</h1>
+                            <h1 className=" text-3xl md:text-2xl lg:text-3xl font-bold mt-4 mb-2 text-white">Login Now</h1>
                             <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="email" name="email" placeholder="email" />
                             <input className="py-1 px-3  my-2 border-2 border-black hover:border-pink-500 rounded-lg" type="password" name="password" placeholder="password" />
                             <input className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 w-full' type="submit" value="Login" />
@@ -94,6 +96,7 @@ const Login = () => {
                 </div>
                 <ToastContainer />
             </div>
+            <Footer></Footer>
         </div>
     );
 };
