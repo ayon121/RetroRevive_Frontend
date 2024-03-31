@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/Authproviders";
 import "../PageCSS/Home.css"
+import Footer from "../Footer/Footer";
 
 const Review = () => {
     const {id} = useParams()
@@ -41,7 +42,7 @@ const Review = () => {
         const ratings = form.number.value;
         const review = { name, sms  , gameid  , ratings, Userlocation , UserEmail}
 
-        fetch('https://RETRO REVIVE-backend.vercel.app/reviews',
+        fetch('http://localhost:5000/reviews',
             {
                 method: 'POST',
                 headers: {
@@ -60,9 +61,9 @@ const Review = () => {
 
     }
     return (
-        <div>
+        <div className="backgrnd">
         <Navbar></Navbar>
-        <div className="flex  justify-center w-full h-screen items-center font-Hind px-3 backgrnd">
+        <div className="flex  justify-center w-full h-screen items-center font-Hind px-3 ">
             <div className=" max-w-4xl mx-auto rounded-2xl flex h-auto py-8 px-3 mt-11" >
                 {/* login form */}
                 <div className="flex flex-row gap-4  py-1 px-8  border-l-4 border-pink-500 h-full">
@@ -82,6 +83,7 @@ const Review = () => {
             <ToastContainer />
         </div>
         </div>
+        <Footer></Footer>
         </div>
     );
 };
