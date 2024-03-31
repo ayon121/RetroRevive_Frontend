@@ -4,44 +4,52 @@ import Navbar from "../../Navbar/Navbar";
 import '../../PageCSS/Home.css'
 import GameCard from "./GameCard";
 
+import cat from "../../../../public/MemoryGame/Cat.png"
+import cow from "../../../../public/MemoryGame/Cow.png"
+import dog from "../../../../public/MemoryGame/dog.png"
+import monkey from "../../../../public/MemoryGame/Monkey.png"
+import panda from "../../../../public/MemoryGame/Panda.png"
+import parrot from "../../../../public/MemoryGame/Parrot.png"
+import snake from "../../../../public/MemoryGame/Snake.png"
+import Tiger from "../../../../public/MemoryGame/Tiger.png"
+
+
 
 const MemoryGame = () => {
     const [Items, setItems] = useState([
-        { id: 1, img: '', stat: "" },
-        { id: 1, img: '', stat: "" },
-        { id: 2, img: '', stat: "" },
-        { id: 2, img: '', stat: "" },
-        { id: 3, img: '', stat: "" },
-        { id: 3, img: '', stat: "" },
-        { id: 4, img: '', stat: "" },
-        { id: 4, img: '', stat: "" },
-        { id: 5, img: '', stat: "" },
-        { id: 5, img: '', stat: "" },
-        { id: 6, img: '', stat: "" },
-        { id: 6, img: '', stat: "" },
-        { id: 7, img: '', stat: "" },
-        { id: 7, img: '', stat: "" },
-        { id: 8, img: '', stat: "" },
-        { id: 8, img: '', stat: "" },
+        { id: 1, img: cat , stat: "" },
+        { id: 1, img: cat , stat: "" },
+        { id: 2, img: cow, stat: "" },
+        { id: 2, img: cow, stat: "" },
+        { id: 3, img: dog, stat: "" },
+        { id: 3, img: dog, stat: "" },
+        { id: 4, img: monkey, stat: "" },
+        { id: 4, img: monkey, stat: "" },
+        { id: 5, img: panda, stat: "" },
+        { id: 5, img: panda, stat: "" },
+        { id: 6, img: parrot, stat: "" },
+        { id: 6, img: parrot, stat: "" },
+        { id: 7, img: snake, stat: "" },
+        { id: 7, img: snake, stat: "" },
+        { id: 8, img: Tiger, stat: "" },
+        { id: 8, img: Tiger, stat: "" },
 
     ].sort(()=> Math.random() - 0.5))
 
     return (
         <div className="backgrnd ">
             <Navbar></Navbar>
-            <div className="min-h-screen mt-4">
+            <div className="min-h-screen mt-4 mb-7">
                 {/* title */}
                 <h1 className="text-3xl md:text-4xl e text-center font-bold uppercase text-white font-Titan">Memory Game</h1>
                 {/* game container */}
-                <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70">
+                <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70 mb-8">
                     <div className="grid grid-cols-4 gap-3">
                         {
                             Items.map((item , index) => <GameCard key={index}  item={item}></GameCard>)
                         }
                     </div>
                 </div>
-
-
             </div>
             <Footer></Footer>
         </div>

@@ -1,5 +1,5 @@
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { FaHeart } from "react-icons/fa";
 const TopGame = () => {
     return (
