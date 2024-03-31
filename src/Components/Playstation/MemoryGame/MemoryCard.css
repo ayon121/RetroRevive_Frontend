@@ -26,3 +26,19 @@
         transform: scale(0);
     }
 }
+
+.card.active{
+    transform: rotateY(0);
+}
+
+.card.active .cardimg {
+    transform: scale(1);
+}
+
+.card.wrong {
+    background-color: rgba(255, 0, 0, 0.829);
+}
+
+.card.correct {
+    background-color: rgba(71, 250, 0, 0.699);
+}

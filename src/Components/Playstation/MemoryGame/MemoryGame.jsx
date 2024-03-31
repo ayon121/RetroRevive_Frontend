@@ -17,8 +17,8 @@ import Tiger from "../../../../public/MemoryGame/Tiger.png"
 
 const MemoryGame = () => {
     const [Items, setItems] = useState([
-        { id: 1, img: cat , stat: "" },
-        { id: 1, img: cat , stat: "" },
+        { id: 1, img: cat, stat: "" },
+        { id: 1, img: cat, stat: "" },
         { id: 2, img: cow, stat: "" },
         { id: 2, img: cow, stat: "" },
         { id: 3, img: dog, stat: "" },
@@ -34,7 +34,42 @@ const MemoryGame = () => {
         { id: 8, img: Tiger, stat: "" },
         { id: 8, img: Tiger, stat: "" },
 
-    ].sort(()=> Math.random() - 0.5))
+    ].sort(() => Math.random() - 0.5))
+
+    const [prev, Setprev] = useState(-1)
+    // checks clicked
+    const handleCilcked = (id) => {
+        // Items[id].stat = "active";
+        // setItems([...Items])
+        if (prev === -1) {
+            Items[id].stat = "active"
+            setItems([...Items])
+            Setprev(id)
+        } else {
+            Check(id)
+        }
+    }
+
+    // checks matches
+    const Check = (current) => {
+        if (Items[current].id == Items[prev].id) {
+            Items[current].stat = "correct"
+            Items[prev].stat = "correct"
+            setItems([...Items])
+            Setprev(-1)
+        } else {
+            Items[current].stat = "wrong"
+            Items[prev].stat = "wrong"
+            setItems([...Items])
+            setTimeout(() => {
+                Items[current].stat = ""
+                Items[prev].stat = ""
+                setItems([...Items])
+                Setprev(-1)
+            }, 1000)
+        }
+    }
+
 
     return (
         <div className="backgrnd ">
@@ -46,7 +81,7 @@ const MemoryGame = () => {
                 <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70 mb-8">
                     <div className="grid grid-cols-4 gap-3">
                         {
-                            Items.map((item , index) => <GameCard key={index}  item={item}></GameCard>)
+                            Items.map((item, index) => <GameCard key={index} item={item} handleCilcked={handleCilcked} id={index}></GameCard>)
                         }
                     </div>
                 </div>
