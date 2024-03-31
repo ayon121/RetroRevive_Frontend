@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import '../../PageCSS/Home.css'
@@ -12,6 +12,7 @@ import panda from "../../../../public/MemoryGame/Panda.png"
 import parrot from "../../../../public/MemoryGame/Parrot.png"
 import snake from "../../../../public/MemoryGame/Snake.png"
 import Tiger from "../../../../public/MemoryGame/Tiger.png"
+import Swal from "sweetalert2";
 
 
 
@@ -70,6 +71,30 @@ const MemoryGame = () => {
         }
     }
 
+    useEffect( () => {
+        if (Items.every(item => item.stat === "correct")) {
+            setTimeout(() => {
+                Swal.fire({
+                    title: "Congratulation You Won The Game",
+                    text: "You Earned 2 points",
+                    showClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                      `
+                    },
+                    hideClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                      `
+                    }
+                  })
+            } , 1000)
+        }
+    }, [Items])
 
     return (
         <div className="backgrnd ">
