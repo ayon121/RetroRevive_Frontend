@@ -51,11 +51,11 @@ const RockPapers = () => {
     return (
         <div className="backgrnd ">
             <Navbar></Navbar>
-            <div className="min-h-screen mt-4 mb-7">
+            <div className="min-h-screen mt-4 mb-7 px-2">
                 {/* title */}
                 <h1 className="text-3xl md:text-4xl e text-center font-bold uppercase text-white font-Titan">Rock Paper Scissor Game</h1>
                 {/* game layout */}
-                <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70 mb-8">
+                <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70 mb-8 px-4">
                     {/* --------------Game-------------------------- */}
                     <div className="flex items-center gap-4 px-4 mb-5">
                         {/* user choice */}
