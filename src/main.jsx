@@ -31,6 +31,7 @@ import DeleteReviews from './Components/Dashboard/DeleteReviews';
 import ReviewEdit from './Components/Review/ReviewEdit';
 import Tictactoe from './Components/Playstation/TicTacToe/Tictactoe';
 import MemoryGame from './Components/Playstation/MemoryGame/MemoryGame';
+import RockPapers from './Components/Playstation/ROCKPAPER/ROCKPAPERS';
 
 
 
@@ -89,6 +90,11 @@ const router = createBrowserRouter([
       {
         path: "/65f0a8a8ae783eabd1838b5e",
         element: <PrivateRoute><MemoryGame></MemoryGame></PrivateRoute>
+
+      },
+      {
+        path: "/65f34b5c99e1a2ee5b485d60",
+        element: <PrivateRoute><RockPapers></RockPapers></PrivateRoute>
 
       }
     ]
