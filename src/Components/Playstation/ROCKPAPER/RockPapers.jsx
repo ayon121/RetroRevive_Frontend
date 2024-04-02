@@ -2,7 +2,7 @@ import { useState } from "react";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import "../../PageCSS/Home.css"
-import Player from "./Player";
+
 
 
 const RockPapers = () => {
@@ -11,6 +11,10 @@ const RockPapers = () => {
     const [winner , SetWinner] = useState(null)
     const [gameOver , SetgameOver] =useState(false)
     const choices = ["Rock", "paper", "scissor"]
+
+    const handleChoice = (choice) => {
+        SetuserChoice(choice)
+    }
     return (
         <div className="backgrnd ">
             <Navbar></Navbar>
@@ -20,7 +24,7 @@ const RockPapers = () => {
                 {/* game layout */}
                 <div className="px-4 max-w-xl my-4 py-4 mx-auto rounded-3xl border-2 border-sky-300 border-double  bg-gradient-to-r from-slate-900/50   to-sky-950/70 mb-8">
                     {/* --------------Game-------------------------- */}
-                    <div className="flex items-center gap-4 px-4">
+                    <div className="flex items-center gap-4 px-4 mb-5">
                         {/* user choice */}
                         <div>
                             <img src={`../../../../public/RockPaper/${userChoice}.png`} alt="userchoice" />
@@ -34,11 +38,11 @@ const RockPapers = () => {
                      {/* --------------Game-------------------------- */}
                     <div className="flex justify-center gap-3">
                         {/* rock btn */}
-                        <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>ROCK</button>
+                        <button onClick={() => handleChoice('Rock')} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>ROCK</button>
                         {/* PAPER btn */}
-                        <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>PAPER</button>
+                        <button onClick={() => handleChoice('paper')} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>PAPER</button>
                         {/* SCISSORS btn */}
-                        <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>SCISSORS</button>
+                        <button onClick={() => handleChoice('scissor')} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>SCISSORS</button>
                     </div>
                     {/* winner */}
                     <div className="flex justify-center px-2 my-5">
