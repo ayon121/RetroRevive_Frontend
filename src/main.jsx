@@ -32,6 +32,7 @@ import ReviewEdit from './Components/Review/ReviewEdit';
 import Tictactoe from './Components/Playstation/TicTacToe/Tictactoe';
 import MemoryGame from './Components/Playstation/MemoryGame/MemoryGame';
 import RockPapers from './Components/Playstation/ROCKPAPER/ROCKPAPERS';
+import AllProducts from './Components/Pages/AllProducts/AllProducts';
 
 
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/games",
         element: <Games></Games>
+      },
+      {
+        path: "/allproducts",
+        element: <AllProducts></AllProducts>
       },
       {
         path: "/about",
