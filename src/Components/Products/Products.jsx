@@ -3,9 +3,11 @@ import Title from "../Title/Title";
 import Product from "./Product";
 import Marquee from "react-fast-marquee";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useNavigate } from "react-router-dom";
 const Products = () => {
     const [ HomeProducts, SetHomeProducts] = useState([])
     const axiosSecure = useAxiosSecure()
+    const navigate = useNavigate()
 
     useEffect(() => {
         axiosSecure.get('/homeproducts')
@@ -23,7 +25,7 @@ const Products = () => {
                 </div>
             </Marquee>
             <div className="flex justify-center mb-5 px-2">
-                <button  className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>See More</button>
+                <button onClick={() =>navigate('/allproducts')}  className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>See More</button>
             </div>
 
         </div>
