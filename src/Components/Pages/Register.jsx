@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet';
 import { axiosSecure } from '../../Hooks/useAxiosSecure';
 import "../PageCSS/Home.css"
 const Register = () => {
-    const { createUser, GoogleLogin } = useContext(AuthContext)
+    const { createUser, GoogleLogin , UpdateProfile } = useContext(AuthContext)
     const navigate = useNavigate()
     const handleRegister = e => {
         e.preventDefault()
@@ -30,14 +30,21 @@ const Register = () => {
                     email: email,
                     name: name,
                     userRole: 'user',
-                    userType: 'nonPaid'
+                    userType: 'nonPaid',
+                    userPoints : 0 ,
+                    goldcoins : 0 , 
+    
                 }
                 axiosSecure.post('/users', userinfo)
                     .then(res => console.log(res.data))
 
                 console.log(result)
+                UpdateProfile(name)
+                .catch(error => {
+                    toast(error.message)
+                })
 
-                toast("Login Success")
+                toast("Register Success")
                 navigate('/')
 
             })
@@ -51,10 +58,14 @@ const Register = () => {
                     email: result.user?.email,
                     name: result.user?.displayName,
                     userRole: 'user',
-                    userType: 'nonPaid'
+                    userType: 'nonPaid',
+                    userPoints : 0 ,
+                    goldcoins : 0 ,
                 }
                 axiosSecure.post('/users', userinfo)
                     .then(res => console.log(res.data))
+
+                console.log(result)
                 toast("Login Success")
                 navigate(location?.state ? location.state : '/')
 
