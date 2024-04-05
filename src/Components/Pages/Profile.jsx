@@ -51,7 +51,7 @@ const Profile = () => {
                         </div>
                     </div>
                     {/* // bio */}
-                    <p className="text-center font-semibold text-sm text-black font-mono pb-2">Level up your gaming experience with us - where every click counts, every victory matters, and every quest leads to epic adventures. Welcome to the ultimate gaming community where gamers unite and friendships forge in the fires of virtual battlegrounds.</p>
+                    <p className="text-center font-semibold text-sm text-black font-mono pb-2">Level up your gaming experience with us - where every click counts, every victory matters, and every quest leads to epic adventures. Play online games and earn points. Convert your points into goldcoins and buy special gaming products upto 50% off.</p>
                     <button  onClick={redeemCoin} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Redeem Points</button>
                 </div>
 
