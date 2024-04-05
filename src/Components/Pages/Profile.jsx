@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar"
-
+import Swal from "sweetalert2";
 import "../PageCSS/Home.css"
 import { AuthContext } from "../../Providers/Authproviders";
 import { axiosSecure } from "../../Hooks/useAxiosSecure";
+
 const Profile = () => {
     const { user} = useContext(AuthContext)
     const [userinfo , Setuserinfo] = useState([])
@@ -12,7 +13,13 @@ const Profile = () => {
     .then(res => Setuserinfo(res.data))
 
 
-    console.log(userinfo);
+    const redeemCoin = () => {
+        Swal.fire({
+            icon: "info",
+            title: "Update Will Come Soon",
+            text: "I am working on it , Thanks for your interest.",   
+          })
+    }
     return (
         <div className='backgrnd'>
             <Navbar></Navbar>
@@ -45,7 +52,7 @@ const Profile = () => {
                     </div>
                     {/* // bio */}
                     <p className="text-center font-semibold text-sm text-black font-mono pb-2">Level up your gaming experience with us - where every click counts, every victory matters, and every quest leads to epic adventures. Welcome to the ultimate gaming community where gamers unite and friendships forge in the fires of virtual battlegrounds.</p>
-                    <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Redeem Points</button>
+                    <button  onClick={redeemCoin} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Redeem Points</button>
                 </div>
 
             </div>
