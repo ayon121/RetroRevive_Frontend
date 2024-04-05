@@ -9,6 +9,16 @@ const OnPageReview = ({ post }) => {
     const [singleuserInfo] = useSingleUser()
     const { user } = useContext(AuthContext)
     const {_id ,  name, sms, ratings, Userlocation , UserEmail} = post
+
+    // ratings star function
+    const stars = [];
+    for( let i = 0; i < ratings; i++ ){
+        stars.push(
+            <span key={i} className='text-yellow-500 text-xl'>
+              <AiFillStar />
+            </span>
+          );                  
+    }
     return (
         <div className="card w-auto text-white mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 duration-500 hover:top-3  shadow-xl">
             <div className="card-body">
@@ -16,10 +26,7 @@ const OnPageReview = ({ post }) => {
 
                 </h2>
                 <p className='w-full bg-sky-400 h-1 rounded-full'></p>
-                <p className='flex items-center '>
-                    <span className='text-xl font-Hind'> {ratings}</span>
-                    <span className='text-yellow-500 text-xl'><AiFillStar></AiFillStar></span>
-                </p>
+                <p className='flex items-center '>{stars}</p>
                 <p className='text-lg md:text-xl font-light '>{sms}</p>
                 {/* location admin */}
                 {singleuserInfo[0]?.userRole === 'admin' && <div>
