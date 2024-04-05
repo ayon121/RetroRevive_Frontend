@@ -9,7 +9,6 @@ const RockPapers = () => {
     const [userChoice , SetuserChoice] = useState('Rock')
     const [computerChoice , SetComputerChoice ] = useState('Rock')
     const [winner , SetWinner] = useState(null)
-    const [gameOver , SetgameOver] =useState(false)
     const [userpoints , Setuserpoints] =useState(0)
     const [computerPoints , SetcomputerPoints] =useState(0)
     const choices = ["Rock", "paper", "scissor"]
