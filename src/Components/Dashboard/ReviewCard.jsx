@@ -26,16 +26,24 @@ const ReviewCard = ({review}) => {
             toast('Error:', error);
         });
     }
+    // ratings star function
+    const stars = [];
+    for( let i = 0; i < ratings; i++ ){
+        stars.push(
+            <span key={i} className='text-yellow-500 text-xl'>
+              <AiFillStar />
+            </span>
+          );                  
+    }
     return (
-        <div className='border-2 border-black rounded-3xl px-4 '>
+        <div className="card w-auto text-white mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 duration-500 hover:top-3  shadow-xl">
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{sms}</p>
                  <p className='flex items-center '> 
-                    <span>Ratings :  {ratings}</span>
-                 <span className='text-yellow-500'><AiFillStar></AiFillStar></span>
+                    {stars}
                  </p>
-                 <button onClick={handleDelete} className="mt-3 w-1/2 mx-auto font-Hind font-bold  btn text-white bg-[#3fb43b] hover:bg-white hover:text-black">Delete</button>
+                 <button onClick={handleDelete}  className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Delete</button>
             </div>
             <ToastContainer />
         </div>

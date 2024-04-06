@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import ReviewCard from "./ReviewCard";
+import Title from "../Title/Title"
 
 const DeleteReviews = () => {
     const [reviews, setReview] = useState([])
@@ -17,8 +18,8 @@ const DeleteReviews = () => {
 
     return (
         <div>
-            <h1 className="text-center px-3 text-4xl md:text-5xl uppercase mt-5 mb-4 font-mono border-4 rounded-3xl border-black max-w-3xl mx-auto">Delete Reviews</h1>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 px-3 mb-6 '>
+            <Title title={'Delete Reviews'}></Title>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 px-3 pb-5'>
                 {
                     reviews?.map(review => <ReviewCard key={review._id} review={review}> </ReviewCard>)
                 }
