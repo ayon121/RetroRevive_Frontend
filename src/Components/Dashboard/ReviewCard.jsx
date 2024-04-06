@@ -36,11 +36,11 @@ const ReviewCard = ({review}) => {
           );                  
     }
     return (
-        <div className="card w-auto text-white mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 duration-500 hover:top-3  shadow-xl">
+        <div className="card text-center w-auto text-white mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 duration-500 hover:top-3  shadow-xl">
             <div className="card-body">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="font-bold text-2xl text-center">{name}</h2>
                 <p>{sms}</p>
-                 <p className='flex items-center '> 
+                 <p className='flex justify-center '> 
                     {stars}
                  </p>
                  <button onClick={handleDelete}  className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Delete</button>
