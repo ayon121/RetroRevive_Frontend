@@ -27,7 +27,7 @@ const Profile = () => {
                 <div className="p-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-white border-4 border-sky-300">
                     {/* // avatar */}
                     <div className="relative group">
-                        <img className="w-[110px] h-[110px] bg-slate-500 object-cover rounded-full" src="https://source.unsplash.com/300x300/?profile" alt="profile img" />
+                        <img className="w-[110px] h-[110px] bg-pink-400 object-cover rounded-full" src="https://source.unsplash.com/300x300/?profile" alt="profile img" />
                         <span className="h-5 w-5 bg-green-500 absolute rounded-full bottom-3 right-0 border-[3px] border-white"></span>
                         <span className="h-5 w-5 bg-pink-500 absolute rounded-full bottom-3 right-0 animate-ping"></span>
                     </div>

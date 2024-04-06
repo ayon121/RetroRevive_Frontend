@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         element: <Contact></Contact>
       },
       {
-        path: "/profile/:id",
+        path: "/profile",
         element: <PrivateRoute><Profile></Profile></PrivateRoute>
 
       },

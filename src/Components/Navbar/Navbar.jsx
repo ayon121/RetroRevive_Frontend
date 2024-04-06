@@ -25,7 +25,7 @@ const Navbar = () => {
         <li><NavLink to="/games" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Games</NavLink></li>
         <li><NavLink to="/allproducts" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Products</NavLink></li>
         {
-            user && <li><NavLink to={`/profile/${user?.email}`} className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Profile</NavLink></li>
+            user && <li><NavLink to="/profile" className={({ isActive }) => isActive ? 'text-sm font-bold text-pink-500 bg-white   hover:text-pink-400 ' : 'text-sm bg-transparent text-[#f8f5f5] hover:text-pink-400'}>Profile</NavLink></li>
         }
         {
             singleuserInfo[0]?.userRole === 'admin' && <div>
