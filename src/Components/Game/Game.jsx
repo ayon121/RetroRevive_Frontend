@@ -50,8 +50,8 @@ const Game = ({ game }) => {
                         singleuserInfo[0]?.userRole === 'admin' && <div className="card-actions justify-end">
                         <button disabled={true} onClick={handleGameDelete} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Delete</button>
                     </div>
-                    }
-                     */}
+                    } */}
+                    
                 </div>
             </div>
             <ToastContainer />
