@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import "../../PageCSS/Home.css"
-
+import paperimg from "../../../../public/RockPaper/paper.png"
+import scissorimg from "../../../../public/RockPaper/scissor.png"
+import rockimg from "../../../../public/RockPaper/Rock.png"
 
 
 const RockPapers = () => {
-    const [userChoice , SetuserChoice] = useState('Rock')
-    const [computerChoice , SetComputerChoice ] = useState('Rock')
-    const [winner , SetWinner] = useState(null)
-    const [userpoints , Setuserpoints] =useState(0)
-    const [computerPoints , SetcomputerPoints] =useState(0)
+    const [userChoice, SetuserChoice] = useState('Rock')
+    const [computerChoice, SetComputerChoice] = useState('Rock')
+    const [winner, SetWinner] = useState(null)
+    const [userpoints, Setuserpoints] = useState(0)
+    const [computerPoints, SetcomputerPoints] = useState(0)
     const choices = ["Rock", "paper", "scissor"]
 
     const handleChoice = (choice) => {
@@ -23,30 +25,30 @@ const RockPapers = () => {
         SetComputerChoice(RandomChoice)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         const comboMoves = userChoice + computerChoice
-        if(userpoints <= 4 && computerPoints <=4){
-            if(comboMoves === "Rockscissor" || comboMoves === "paperRock" || comboMoves === "scissorpaper"){
-                const updateUserPoints= userpoints + 1
+        if (userpoints <= 4 && computerPoints <= 4) {
+            if (comboMoves === "Rockscissor" || comboMoves === "paperRock" || comboMoves === "scissorpaper") {
+                const updateUserPoints = userpoints + 1
                 Setuserpoints(updateUserPoints)
-                if(updateUserPoints === 5){
+                if (updateUserPoints === 5) {
                     SetWinner('You Won the Game')
                 }
             }
-            if(comboMoves === "paperscissor" || comboMoves === "scissorRock" || comboMoves === "Rockpaper"){
-                const updateComputerPoints= computerPoints + 1
+            if (comboMoves === "paperscissor" || comboMoves === "scissorRock" || comboMoves === "Rockpaper") {
+                const updateComputerPoints = computerPoints + 1
                 SetcomputerPoints(updateComputerPoints)
-                if(updateComputerPoints === 5){
+                if (updateComputerPoints === 5) {
                     SetWinner('Computer Won the Game')
                 }
 
             }
-            if(comboMoves === "paperpaper" || comboMoves === "scissorscissor" || comboMoves === "RockRock"){
+            if (comboMoves === "paperpaper" || comboMoves === "scissorscissor" || comboMoves === "RockRock") {
                 SetWinner('Stay Playing')
             }
         }
 
-    },[userChoice , computerChoice])
+    }, [userChoice, computerChoice])
     return (
         <div className="backgrnd ">
             <Navbar></Navbar>
@@ -59,25 +61,31 @@ const RockPapers = () => {
                     <div className="flex items-center gap-4 px-4 mb-5">
                         {/* user choice */}
                         <div>
-                            <img src={`../../../../public/RockPaper/${userChoice}.png`} alt="userchoice" />
+                            {
+                                (userChoice === "paper" && <img src={paperimg} alt="paper" />) || (userChoice === "Rock" && <img src={rockimg} alt="rock" />) || (userChoice === "scissor" && <img src={scissorimg} alt="scissor" />)
+                            }
+                            {/* <img src={`../../../../public/RockPaper/${userChoice}.png`} alt="userchoice" /> */}
                         </div>
                         <div>
-                            <img src={`../../../../public/RockPaper/${computerChoice}.png`} alt="userchoice" />
+                            {
+                                (computerChoice === "paper" && <img src={paperimg} alt="paper" />) || (computerChoice === "Rock" && <img src={rockimg} alt="rock" />) || (computerChoice === "scissor" && <img src={scissorimg} alt="scissor" />)
+                            }
+                            {/* <img src={`../../../../public/RockPaper/${computerChoice}.png`} alt="userchoice" /> */}
                         </div>
 
 
                     </div>
-                     {/* --------------Game-------------------------- */}
+                    {/* --------------Game-------------------------- */}
 
-                     {/* ----------points---------- */}
-                     <div className="text-sky-400 px-4 text-center mb-4 ">
+                    {/* ----------points---------- */}
+                    <div className="text-sky-400 px-4 text-center mb-4 ">
                         <h1 className="text-2xl md:text-3xl font-extrabold ">Points</h1>
                         <div className="flex gap-3 justify-center font-bold items-center">
                             <h1>You : {userpoints}</h1> vs
                             <h1>Com : {computerPoints}</h1>
                         </div>
-                     </div>
-                     {/* ----------------------btns-------------- */}
+                    </div>
+                    {/* ----------------------btns-------------- */}
                     <div className="flex justify-center gap-3">
                         {/* rock btn */}
                         <button onClick={() => handleChoice('Rock')} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>ROCK</button>
@@ -94,14 +102,14 @@ const RockPapers = () => {
                         {/* start btn */}
                         {
                             (userpoints === 5 || computerPoints === 5) &&
-                                <button onClick={() => {
-                                    SetcomputerPoints(0)
-                                     Setuserpoints(0)
-                                     SetWinner(null)
-                                    }} className='btn w-3/4 px-4 mt-5 mb-3 bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>RESTART</button>
-                            
+                            <button onClick={() => {
+                                SetcomputerPoints(0)
+                                Setuserpoints(0)
+                                SetWinner(null)
+                            }} className='btn w-3/4 px-4 mt-5 mb-3 bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>RESTART</button>
+
                         }
-                     
+
                     </div>
 
                 </div>
