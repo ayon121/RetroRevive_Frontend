@@ -14,7 +14,7 @@ const AddGame = () => {
         const description = form.description.value;
         const review = { title,img  , description}
 
-        fetch('https://RETRO REVIVE-backend.vercel.app/games',
+        fetch('http://localhost:5000/games',
             {
                 method: 'POST',
                 headers: {

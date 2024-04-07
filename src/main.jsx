@@ -34,6 +34,7 @@ import MemoryGame from './Components/Playstation/MemoryGame/MemoryGame';
 import RockPapers from './Components/Playstation/ROCKPAPER/ROCKPAPERS';
 import AllProducts from './Components/Pages/AllProducts/AllProducts';
 import Profile from './Components/Pages/Profile';
+import AddProduct from './Components/Dashboard/AddProduct';
 
 
 
@@ -117,6 +118,10 @@ const router = createBrowserRouter([
       {
         path : '/dashboard/addgame' , 
         element : <PrivateRoute><AddGame></AddGame> </PrivateRoute>
+      },
+      {
+        path : '/dashboard/addproduct' , 
+        element : <PrivateRoute><AddProduct></AddProduct> </PrivateRoute>
       },
       {
         path : '/dashboard/deletereviews' , 
