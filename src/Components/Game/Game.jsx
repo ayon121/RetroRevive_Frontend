@@ -5,27 +5,27 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 // react toast
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useSingleUser from '../../Hooks/useSingleUser';
+// import useSingleUser from '../../Hooks/useSingleUser';
 const Game = ({ game }) => {
 
-    const [singleuserInfo ] = useSingleUser()
+    // const [singleuserInfo ] = useSingleUser()
     const { _id, title, description, img } = game
-    const axiosSecure = useAxiosSecure()
-    const navigate = useNavigate()
-    const handleGameDelete = () => {
-        axiosSecure.delete(`/deletegame/${_id}`)
-            .then(res => {
-                if (res.data.deletedCount > 0) {
-                    toast('done');
-                    navigate('/')
-                } else {
-                    toast('No items deleted');
-                }
-            })
-            .catch(error => {
-                toast('Error:', error);
-            });
-    }
+    // const axiosSecure = useAxiosSecure()
+    // const navigate = useNavigate()
+    // const handleGameDelete = () => {
+    //     axiosSecure.delete(`/deletegame/${_id}`)
+    //         .then(res => {
+    //             if (res.data.deletedCount > 0) {
+    //                 toast('done');
+    //                 navigate('/')
+    //             } else {
+    //                 toast('No items deleted');
+    //             }
+    //         })
+    //         .catch(error => {
+    //             toast('Error:', error);
+    //         });
+    // }
     return (
         <div className="card card-compact w-auto h-96 text-white  shadow-xl  mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70 border-sky-300">
             <figure>
@@ -46,12 +46,12 @@ const Game = ({ game }) => {
                     <div className="card-actions justify-end">
                         <Link to={`/${_id}`}><button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Play</button></Link>
                     </div>
-                    {
+                    {/* {
                         singleuserInfo[0]?.userRole === 'admin' && <div className="card-actions justify-end">
-                        <button onClick={handleGameDelete} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Delete</button>
+                        <button disabled={true} onClick={handleGameDelete} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600'>Delete</button>
                     </div>
                     }
-                    
+                     */}
                 </div>
             </div>
             <ToastContainer />
