@@ -64,6 +64,42 @@ const Login = () => {
             .catch(error => toast(error.message))
     }
 
+    // demo admin login
+    const handleDemoAdminlogin = () => {
+        const email = "admin12@gmail.com"
+        const password = "admin1234"
+        // demouser12@gmail.com
+        loginUser(email, password)
+            .then(result => {
+                const loggedInUser = result.user
+                console.log(loggedInUser);
+                toast("Login Success")
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                toast(error.message)
+            })
+
+    }
+     // demo admin login
+     const handleDemoUserlogin = () => {
+        const email = "demouser12@gmail.com"
+        const password = "user1234"
+        loginUser(email, password)
+            .then(result => {
+                const loggedInUser = result.user
+                console.log(loggedInUser);
+                toast("Login Success")
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                toast(error.message)
+            })
+
+    }
+
     return (
         <div className='backgrnd'>
             <Helmet>
@@ -85,7 +121,10 @@ const Login = () => {
                             <p className="text-sky-400 pb-1">or login using google</p>
                             <button onClick={HandleGoogleLogin} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 w-full'><FcGoogle></FcGoogle> Google</button>
                             <p className='pt-2 text-sky-400'>Do not have a account? <Link to="/register"> <button className='text-pink-500 underline'>Register Now</button></Link></p>
-
+                            <div className='flex gap-3 mt-3 mb-2'>
+                                <button onClick={handleDemoAdminlogin} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 w-auto'>Demo Admin</button>
+                                <button onClick={handleDemoUserlogin} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 w-auto'>Demo User</button>
+                            </div>
                         </div>
                     </div>
                     {/* wishes */}
