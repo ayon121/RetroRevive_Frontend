@@ -35,6 +35,7 @@ import RockPapers from './Components/Playstation/ROCKPAPER/ROCKPAPERS';
 import AllProducts from './Components/Pages/AllProducts/AllProducts';
 import Profile from './Components/Pages/Profile';
 import AddProduct from './Components/Dashboard/AddProduct';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 
 
@@ -115,6 +116,10 @@ const router = createBrowserRouter([
     path : '/dashboard' ,
     element : <Layout></Layout>,
     children  : [
+      {
+        path : "/dashboard",
+        element : <Dashboard></Dashboard>
+      },
       {
         path : '/dashboard/addgame' , 
         element : <PrivateRoute><AddGame></AddGame> </PrivateRoute>
