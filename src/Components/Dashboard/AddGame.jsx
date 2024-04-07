@@ -36,8 +36,8 @@ const AddGame = () => {
         <div>
             <Title title={'Add New Game'}></Title>
             <div>
-                <div className="flex  justify-center w-full h-screen font-Hind px-3">
-                    <div className=" max-w-4xl mx-auto rounded-2xl flex h-96 py-8 px-3" >
+                <div className="flex  justify-center w-full h-auto font-Hind px-3">
+                    <div className=" max-w-4xl mx-auto rounded-2xl flex h-auto py-8 px-3" >
                         {/* login form */}
                         <div className="flex flex-row gap-4  py-1 px-28  border-x-4 rounded-3xl border-sky-300 h-full">
                             <form className='flex flex-col' onSubmit={handleAddGame}>
