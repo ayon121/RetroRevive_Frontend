@@ -1,30 +1,46 @@
 <h1>
-    About This Project
+    Welcome to Retro Revive: Where Gaming Memories Come Alive
 </h1>
 <p>
-    This  a hotel management website. This website is for hotel owners. Here hotel owners can show what type of rooms are available and how many rooms are available. User can see room details and can book room of their choice on the available date. After booking they can also post reviews of the room. In total , this is a full hotel website
+    Retro Revive isn't just a website; it's a portal to your fondest childhood memories. Step into a world of nostalgia and excitement, where classic games reign supreme and every victory earns you rewards. Built by passionate gamers, Retro Revive is your one-stop destination for reliving the golden age of gaming.
 </p>
 <hr>
 <h1>
     Features
 </h1>
 <p>
-    1. Responsive <br>
-    2. Login with Email & Password <br>
-    3. Social Login(Google) <br>
-    4. Database(mongodb) <br>
-    5. User Friendly <br>
-    6. Typing Effect on title in Home Page(Unique Feature)<br>
-    7. Reputation Chart On About Page(Unique Feature)
+    <b>Wide Selection of Retro Games:</b> Experience the thrill of timeless classics like Tic-Tac-Toe, Memory Game, Rock Paper Scissors, and more. Renew your childhood memories with every click. <br>
+    <b>Points & Rewards System:</b> Win games, earn points, and unlock discounts of up to 50% on premium gaming products. Level up your gaming experience with exclusive rewards.
+    <br>
+    <b>Responsive Design:</b> Enjoy seamless gameplay and browsing across all devices with our fully responsive website. Experience retro gaming anywhere, anytime. 
+    <br>
+    <b>Game Reviews:</b> Share your thoughts and experiences by leaving reviews on your favorite games. Let your voice be heard in the gaming community.
+    <br>
+    <b>Products Section:</b> Explore our curated selection of gaming products, from vintage consoles to the latest accessories. Gear up for your next gaming adventure.
+    <br>
+    <b>User Profile Management:</b> Keep track of your points and rewards through our intuitive user profile section. Stay updated on your gaming progress.
+    <br>
+    <b>Admin Panel:</b> Empower administrators with control over reviews, products, games, and user management. Streamline operations and ensure a smooth user experience.
+    <br>
+    <b>Firebase Authentication:</b> Seamlessly login using Google or email/password credentials, powered by Firebase. Experience hassle-free access to your gaming account.
+    <br>
+    <b>Fantastic Gaming UI:</b> Immerse yourself in a visually stunning gaming interface crafted with React and Tailwind CSS. Indulge your senses with an unparalleled gaming experience.
 </p>
 <hr>
 <h1>
     Live Link
 </h1>
 <p>
-    Visit Now : <a href="https://hotel-management-beb7b.web.app">Hotel Vue</a><br>
-    Server Repo : <a href="https://github.com/ayon121/Hotel_Management_Server_Node.git">Server Code</a>
+    Visit Now : <a href="https://game-project-7e378.web.app">Retro Revive</a><br>
+    Server Repo : <a href="https://github.com/ayon121/RetroRevive_Backend.git">Server Code</a>
 </p>
+<hr>
+<P>
+    Retro Revive is more than just a website; it's a celebration of gaming culture and camaraderie. Join us today and rediscover the magic of retro gaming, one victory at a time.
+
+<br>
+Let's revive the classics together.
+</P>
 <hr>
 <!-- tech -->
 <h1>
@@ -41,5 +57,4 @@
 </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="60" height="60"/> </a> 
 <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="60" height="60"/> 
 </p>
-
 
