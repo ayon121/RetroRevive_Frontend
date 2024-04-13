@@ -42,7 +42,7 @@ const Review = () => {
         const ratings = form.number.value;
         const review = { name, sms  , gameid  , ratings, Userlocation , UserEmail}
 
-        fetch('http://localhost:5000/reviews',
+        fetch('https://game-backend-tawny.vercel.app/reviews',
             {
                 method: 'POST',
                 headers: {

@@ -21,7 +21,7 @@ import Review from './Components/Review/Review';
 import {
   QueryClient,
   QueryClientProvider,
-  
+
 } from '@tanstack/react-query'
 import Games from './Components/Pages/Games';
 import GameDetails from './Components/Pages/GameDetails';
@@ -36,7 +36,8 @@ import AllProducts from './Components/Pages/AllProducts/AllProducts';
 import Profile from './Components/Pages/Profile';
 import AddProduct from './Components/Dashboard/AddProduct';
 import Dashboard from './Components/Dashboard/Dashboard';
-
+import {Provider} from "react-redux"
+import Store from './app/Store';
 
 
 const queryClient = new QueryClient()
@@ -113,24 +114,24 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path : '/dashboard' ,
-    element : <Layout></Layout>,
-    children  : [
+    path: '/dashboard',
+    element: <Layout></Layout>,
+    children: [
       {
-        path : "/dashboard",
-        element : <Dashboard></Dashboard>
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>
       },
       {
-        path : '/dashboard/addgame' , 
-        element : <PrivateRoute><AddGame></AddGame> </PrivateRoute>
+        path: '/dashboard/addgame',
+        element: <PrivateRoute><AddGame></AddGame> </PrivateRoute>
       },
       {
-        path : '/dashboard/addproduct' , 
-        element : <PrivateRoute><AddProduct></AddProduct> </PrivateRoute>
+        path: '/dashboard/addproduct',
+        element: <PrivateRoute><AddProduct></AddProduct> </PrivateRoute>
       },
       {
-        path : '/dashboard/deletereviews' , 
-        element : <PrivateRoute><DeleteReviews></DeleteReviews></PrivateRoute>
+        path: '/dashboard/deletereviews',
+        element: <PrivateRoute><DeleteReviews></DeleteReviews></PrivateRoute>
       },
     ]
   }
@@ -139,12 +140,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Authproviders>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
-
-    </Authproviders>
+    <Provider store={Store}>
+      <Authproviders>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </Authproviders>
+    </Provider>
 
   </React.StrictMode>,
 )

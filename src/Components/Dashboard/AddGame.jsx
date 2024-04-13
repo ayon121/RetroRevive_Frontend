@@ -14,7 +14,7 @@ const AddGame = () => {
         const description = form.description.value;
         const review = { title,img  , description}
 
-        fetch('http://localhost:5000/games',
+        fetch('https://game-backend-tawny.vercel.app/games',
             {
                 method: 'POST',
                 headers: {

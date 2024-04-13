@@ -16,7 +16,7 @@ const AddProduct = () => {
         
         const product = { title, description , img  , price , available  , likes}
 
-        fetch('http://localhost:5000/addproduct',
+        fetch('https://game-backend-tawny.vercel.app/addproduct',
             {
                 method: 'POST',
                 headers: {
