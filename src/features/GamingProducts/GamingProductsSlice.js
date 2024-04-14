@@ -25,7 +25,6 @@ const GamingProductSlice = createSlice({
         builder.addCase(featchGamingProducts.fulfilled , (state , action )=> {
             state.isLoading = false
             state.allproducts = action.payload
-            console.log(action.payload);
         })
         builder.addCase(featchGamingProducts.rejected, (state , action )=> {
             state.isLoading = false

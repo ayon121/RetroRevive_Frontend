@@ -1,7 +1,12 @@
+import { useDispatch} from "react-redux";
 import Title from "../Title/Title";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { AddGamingProducts } from "../../features/AddGamingProducts/AddGamingProductsSlice";
+
 
 const AddProduct = () => {
+    
+    const dispatch = useDispatch()
     const handleAddProduct = e => {
         e.preventDefault()
         const form = e.target
@@ -15,23 +20,30 @@ const AddProduct = () => {
         const img = form.img.value;
         
         const product = { title, description , img  , price , available  , likes}
+        
 
-        fetch('https://game-backend-tawny.vercel.app/addproduct',
-            {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(product)
-            }
-        )
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    toast("Game added Successfully")
+        // ------------------- Using Redux Way ----------------------//
+        dispatch(AddGamingProducts(product))
+        
 
-                }
-            })
+
+        // ----------------------------------------------------------------
+        // fetch('https://game-backend-tawny.vercel.app/addproduct',
+        //     {
+        //         method: 'POST',
+        //         headers: {
+        //             'content-type': 'application/json'
+        //         },
+        //         body: JSON.stringify(product)
+        //     }
+        // )
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data.insertedId) {
+        //             toast("Game added Successfully")
+
+        //         }
+        //     })
 
     }
     return (
