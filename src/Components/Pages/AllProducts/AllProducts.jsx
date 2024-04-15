@@ -3,17 +3,31 @@ import "../../PageCSS/Home.css"
 import Navbar from "../../Navbar/Navbar";
 import Footer from "../../Footer/Footer";
 // import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import { useEffect} from "react";
+import { useEffect, useState} from "react";
 import AllProduct from "./AllProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { featchGamingProducts } from "../../../features/GamingProducts/GamingProductsSlice";
+import useTotalProductCount from "../../../Hooks/useTotalProductCount";
 const AllProducts = () => {
     // Redux Data Fetching
     const {allproducts , isLoading , isError , error  }  = useSelector(state => state.GamingProducts)
     const dispatch = useDispatch()
+
+    // pagination code
+    const [currentPage , SetcurrentPage] = useState(0)
+    const itemsPerPage = 3
+    const countarray= useTotalProductCount()
+    const count = countarray[0]
+    const Pagenumber = Math.ceil(count/ itemsPerPage)
+    const pages = [...Array(Pagenumber).keys()]
+
+
+    // redux data fetching
+    
     useEffect( ()  => {
-        dispatch(featchGamingProducts())
-    }, [dispatch])
+        const pagination = {currentPage , itemsPerPage}
+        dispatch(featchGamingProducts(pagination))
+    }, [dispatch , currentPage , itemsPerPage])
 
     let content ;
     if(isLoading){
@@ -49,6 +63,11 @@ const AllProducts = () => {
                     } */}
                     {content}
                 </div>
+                <div className="max-w-5xl mx-auto px-3 text-center mb-8 ">
+                {
+                    pages.map((page , index) => <button onClick={()=> { SetcurrentPage(page); }} key={index} className={currentPage === page && 'btn btn-xs mx-2 text-white bg-pink-500 hover:bg-pink-700' || 'btn btn-sm mx-2 text-pink-400 hover:text-black  border-pink-400'}>{page}</button>)
+                }
+            </div>
             </div>
             <Footer></Footer>
 

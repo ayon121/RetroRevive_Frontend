@@ -9,8 +9,9 @@ const initialState = {
 }
 
 export const  featchGamingProducts = createAsyncThunk('gamingproduct/getgamingproducts' , 
-async () => {
-    const GamingProducts = await getGamingProduct();
+async (pagination) => {
+    
+    const GamingProducts = await getGamingProduct(pagination);
     return GamingProducts;
 })
 
