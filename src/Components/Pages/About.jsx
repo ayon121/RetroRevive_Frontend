@@ -86,10 +86,11 @@ const About = () => {
                     <h1 className='mt-2 text-2xl font-bold'>Our Mission</h1>
                     <p className='text-lg font-semibold pb-3 pt-2'>At Retro Revive, we understand the allure of classic games and the nostalgia they evoke. Our platform offers a vast collection of retro games spanning across different consoles and genres, allowing users to relive their fondest gaming memories or discover timeless classics for the first time.</p>
                 </div>
-                <div>
+                <div className='w-4/5 overflow-hidden'>
                     <h1 className='mt-2 text-2xl font-bold'>Our Reputation From 2017-2023</h1>
                     <BarChart
-                        width={500}
+                        className='w-4/5'
+                        width={400}
                         height={300}
                         data={data}
                         margin={{
