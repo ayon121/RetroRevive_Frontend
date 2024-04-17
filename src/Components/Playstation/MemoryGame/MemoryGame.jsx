@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import '../../PageCSS/Home.css'
@@ -13,6 +13,9 @@ import parrot from "../../../../public/MemoryGame/Parrot.png"
 import snake from "../../../../public/MemoryGame/Snake.png"
 import Tiger from "../../../../public/MemoryGame/Tiger.png"
 import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import { AuthContext } from "../../../Providers/Authproviders";
+import { addGamingPointsAsync } from "../../../features/AddGamePoints/AddGamePointsSlice";
 
 
 
@@ -71,9 +74,16 @@ const MemoryGame = () => {
         }
     }
 
+    // addpoints with redux
+    const dispatch = useDispatch()
+    const { user } = useContext(AuthContext)
+    const addpoint = () => {
+        dispatch(addGamingPointsAsync(user?.email))
+    }
     useEffect( () => {
         if (Items.every(item => item.stat === "correct")) {
             setTimeout(() => {
+                addpoint()
                 Swal.fire({
                     title: "Congratulation You Won The Game",
                     text: "You Earned 2 points",

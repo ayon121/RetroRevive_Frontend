@@ -15,13 +15,8 @@ const AddProduct = () => {
         const price = form.price.value;
         const available = true
         const likes = 0
-
-        
         const img = form.img.value;
-        
         const product = { title, description , img  , price , available  , likes}
-        
-
         // ------------------- Using Redux Way ----------------------//
         dispatch(AddGamingProducts(product))
         
