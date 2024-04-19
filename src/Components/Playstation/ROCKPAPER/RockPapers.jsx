@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Navbar/Navbar";
 import "../../PageCSS/Home.css"
 import paperimg from "../../../../public/RockPaper/paper.png"
 import scissorimg from "../../../../public/RockPaper/scissor.png"
 import rockimg from "../../../../public/RockPaper/Rock.png"
+import { useDispatch } from "react-redux";
+import { AuthContext } from "../../../Providers/Authproviders";
+import { addGamingPointsAsync } from "../../../features/AddGamePoints/AddGamePointsSlice";
+import Swal from "sweetalert2";
 
 
 const RockPapers = () => {
@@ -25,6 +29,12 @@ const RockPapers = () => {
         SetComputerChoice(RandomChoice)
     }
 
+    // addpoints with redux
+    const dispatch = useDispatch()
+    const { user } = useContext(AuthContext)
+    const addpoint = () => {
+        dispatch(addGamingPointsAsync(user?.email))
+    }
     useEffect(() => {
         const comboMoves = userChoice + computerChoice
         if (userpoints <= 4 && computerPoints <= 4) {
@@ -33,6 +43,28 @@ const RockPapers = () => {
                 Setuserpoints(updateUserPoints)
                 if (updateUserPoints === 5) {
                     SetWinner('You Won the Game')
+                    setTimeout(() => {
+                        addpoint()
+                        Swal.fire({
+                            title: "Congratulation You Won The Game",
+                            text: "You Earned 2 points",
+                            showClass: {
+                              popup: `
+                                animate__animated
+                                animate__fadeInUp
+                                animate__faster
+                              `
+                            },
+                            hideClass: {
+                              popup: `
+                                animate__animated
+                                animate__fadeOutDown
+                                animate__faster
+                              `
+                            }
+                          })
+                    } , 1000)
+                    
                 }
             }
             if (comboMoves === "paperscissor" || comboMoves === "scissorRock" || comboMoves === "Rockpaper") {
