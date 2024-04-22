@@ -1,17 +1,22 @@
 
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const AllProduct = ({ allproduct }) => {
     const { img, title, description } = allproduct
-    const buyNow = () => {
-        Swal.fire({
+    // order confirmatioan 
+    const [address, setAddress] = useState('')
+    const [amount, setAmount] = useState(null)
+    const [phone, setPhone] = useState(null)
+    const [usedcoin, setCoin] = useState(0)
+    const buyNow = async () => {
+        const { value: number } = await Swal.fire({
             title: `${title}`,
             color: "#FFFFFF",
-            // custom bg
             background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
+            html: `<b>Select these options before confirmation</b>`,
             input: "select",
-            html: "<b>Select Options To Before Confirming Your Order</b>",
             inputPlaceholder: "Select Quentity",
             inputAttributes: {
                 style: 'background-color: #708090' // Change the color to your desired color
@@ -27,10 +32,73 @@ const AllProduct = ({ allproduct }) => {
                 }
             },
             showCancelButton: true,
-            confirmButtonText: "Confirm Buy",
-
-            showLoaderOnConfirm: true,
-        });
+            confirmButtonText: "Next",
+        })
+        if(number){
+            const { value: coin } = await Swal.fire({
+                title: `${number} ${title} is selected for order `,
+                color: "#FFFFFF",
+                background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
+                html: `<b>Use 5 goldcoins for free Delivery </b><br>
+                <b>Use 5 goldcoins for 5% off </b>`,
+                input: "select",
+                inputPlaceholder: "Select Gold Coin For Offers",
+                inputAttributes: {
+                    style: 'background-color: #708090' // Change the color to your desired color
+                },
+                inputOptions: {
+                    Quantity: {
+                        5: "5",
+                        10: "10",
+                    }
+                },
+                showCancelButton: true,
+                confirmButtonText: "Next",
+            })
+            if (coin) {
+                console.log(number);
+                const { value: formValues } = await Swal.fire({
+                    title: `${number} ${title} is selected for order `,
+                    color: "#FFFFFF",
+                    background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
+                    html: `
+                        <b>Type Your Phone Number</b> <br>
+                      <input id="swal-input1" class="swal2-input"><br>
+                      <b>Type Your Address</b><br>
+                      <input id="swal-input2" class="swal2-input">
+                    `,
+                    focusConfirm: false,
+                    preConfirm: () => {
+                        return [
+                            number,
+                            document.getElementById("swal-input1").value,
+                            document.getElementById("swal-input2").value,
+                            coin
+                        ];
+                    }
+                });
+                if (formValues) {
+                    const [selectedQuantity, enteredPhone, enteredAddress , usecoin] = formValues;
+                    setAmount(selectedQuantity);
+                    setPhone(enteredPhone);
+                    setAddress(enteredAddress);
+                    setCoin(usecoin)
+                    const orderdata = {
+                        Product : title ,
+                        ProdcutAmount : amount , 
+                        OrderAdress : address ,
+                        PhoneNumber : phone ,
+                        CoinUsed : usedcoin,
+                        
+                    }
+                   console.log(orderdata);
+    
+                }
+            }
+        }
+        
+        
+       
     }
     return (
         <div className="card w-auto text-white shadow-2xl  mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 duration-500 hover:top-3 ">
