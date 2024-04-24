@@ -1,15 +1,19 @@
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import {useState } from 'react';
 import Swal from 'sweetalert2';
+import useSingleUser from '../../../Hooks/useSingleUser';
 
 const AllProduct = ({ allproduct }) => {
     const { img, title, description } = allproduct
+    const [singleuserInfo, refetch] = useSingleUser()
+    console.log(singleuserInfo , 'sin');
     // order confirmatioan 
     const [address, setAddress] = useState('')
     const [amount, setAmount] = useState(null)
     const [phone, setPhone] = useState(null)
     const [usedcoin, setCoin] = useState(0)
+
     const buyNow = async () => {
         const { value: number } = await Swal.fire({
             title: `${title}`,
@@ -39,8 +43,9 @@ const AllProduct = ({ allproduct }) => {
                 title: `${number} ${title} is selected for order `,
                 color: "#FFFFFF",
                 background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
-                html: `<b>Use 5 goldcoins for free Delivery </b><br>
-                <b>Use 5 goldcoins for 5% off </b>`,
+                html: `<b>You Have ${singleuserInfo[0]?.goldcoins} Gold Coins</b> <br>
+                <b>Use 5 goldcoins for free Delivery </b><br>
+                `,
                 input: "select",
                 inputPlaceholder: "Select Gold Coin For Offers",
                 inputAttributes: {
@@ -49,7 +54,6 @@ const AllProduct = ({ allproduct }) => {
                 inputOptions: {
                     Quantity: {
                         5: "5",
-                        10: "10",
                     }
                 },
                 showCancelButton: true,
@@ -89,9 +93,10 @@ const AllProduct = ({ allproduct }) => {
                         OrderAdress : address ,
                         PhoneNumber : phone ,
                         CoinUsed : usedcoin,
+                        useremail : singleuserInfo[0]?.email,
                         
                     }
-                   console.log(orderdata);
+                   console.log(orderdata );
     
                 }
             }
