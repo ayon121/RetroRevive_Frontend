@@ -1,9 +1,11 @@
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import useSingleUser from '../../../Hooks/useSingleUser';
-
+import { useDispatch } from 'react-redux';
+import { AddProductOrders } from '../../../features/AddProductOrder/AddProductOrderSlice';
+import { ToastContainer } from 'react-toastify';
 const AllProduct = ({ allproduct }) => {
     const { img, title, description } = allproduct
     const [singleuserInfo] = useSingleUser()
@@ -12,11 +14,27 @@ const AllProduct = ({ allproduct }) => {
     const [amount, setAmount] = useState(null)
     const [phone, setPhone] = useState(null)
     const [usedcoin, setCoin] = useState(0)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (amount !== null && phone !== null && address !== '' && usedcoin !== null) {
+            // Create orderdata object only when all state variables are not null or empty
+            const orderdata = {
+                Product: title || 'non found',
+                ProdcutAmount: amount || 1,
+                OrderAdress: address || 'not given',
+                PhoneNumber: phone || 'not given',
+                CoinUsed: usedcoin || 0,
+                useremail: singleuserInfo[0]?.email,
+            };
+            console.log(orderdata);
+            dispatch(AddProductOrders(orderdata))
+        }
+    }, [amount, phone, address, usedcoin, singleuserInfo, title]);
 
     const buyNow = async () => {
         // input according to goldcoin
         let  InputOptions = {};
-
         if (singleuserInfo[0]?.goldcoins >= 5) {
             InputOptions = {
                 GoldCoin: {
@@ -62,9 +80,9 @@ const AllProduct = ({ allproduct }) => {
             confirmButtonText: "Next",
         })
 
-        if(singleuserInfo[0]?.goldcoins < 5){
+        if(singleuserInfo[0]?.goldcoins < 5 || singleuserInfo[0]?.goldcoins == undefined){
             Swal.fire({
-                title: `You have ${singleuserInfo[0]?.goldcoins} GoldCoins Only `,
+                title: `You have ${singleuserInfo[0]?.goldcoins || 0} GoldCoins Only `,
                 color: "#FFFFFF",
                 background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
                 html: `<b>Earn minimum 5 Gold Coins</b> <br>
@@ -72,12 +90,12 @@ const AllProduct = ({ allproduct }) => {
                 showCancelButton: true,
             })
         }
-        if (number && singleuserInfo[0]?.goldcoins >= 5) {
+        if (number ) {
             const { value: coin } = await Swal.fire({
                 title: `${number} ${title} is selected for order `,
                 color: "#FFFFFF",
                 background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
-                html: `<b>You Have ${singleuserInfo[0]?.goldcoins} Gold Coins</b> <br>
+                html: `<b>You Have ${singleuserInfo[0]?.goldcoins || 0} Gold Coins</b> <br>
                 <b>Use 5 goldcoins for free Delivery </b><br>
                 `,
                 input: "select",
@@ -116,17 +134,7 @@ const AllProduct = ({ allproduct }) => {
                     setAmount(selectedQuantity);
                     setPhone(enteredPhone);
                     setAddress(enteredAddress);
-                    setCoin(usecoin)
-                    const orderdata = {
-                        Product: title,
-                        ProdcutAmount: amount,
-                        OrderAdress: address,
-                        PhoneNumber: phone,
-                        CoinUsed: usedcoin,
-                        useremail: singleuserInfo[0]?.email,
-
-                    }
-                    console.log(orderdata);
+                    setCoin(usecoin); 
 
                 }
             }
@@ -150,7 +158,9 @@ const AllProduct = ({ allproduct }) => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
+
     );
 };
 
