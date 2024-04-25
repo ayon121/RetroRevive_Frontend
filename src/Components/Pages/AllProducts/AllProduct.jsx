@@ -30,7 +30,7 @@ const AllProduct = ({ allproduct }) => {
             console.log(orderdata);
             dispatch(AddProductOrders(orderdata))
         }
-    }, [amount, phone, address, usedcoin, singleuserInfo, title]);
+    }, [amount, phone, address, usedcoin, singleuserInfo, title , dispatch]);
 
     const buyNow = async () => {
         // input according to goldcoin
