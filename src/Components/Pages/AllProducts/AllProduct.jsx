@@ -1,13 +1,12 @@
 
 import PropTypes from 'prop-types';
-import {useState } from 'react';
+import { useState } from 'react';
 import Swal from 'sweetalert2';
 import useSingleUser from '../../../Hooks/useSingleUser';
 
 const AllProduct = ({ allproduct }) => {
     const { img, title, description } = allproduct
-    const [singleuserInfo, refetch] = useSingleUser()
-    console.log(singleuserInfo , 'sin');
+    const [singleuserInfo] = useSingleUser()
     // order confirmatioan 
     const [address, setAddress] = useState('')
     const [amount, setAmount] = useState(null)
@@ -15,6 +14,30 @@ const AllProduct = ({ allproduct }) => {
     const [usedcoin, setCoin] = useState(0)
 
     const buyNow = async () => {
+        // input according to goldcoin
+        let  InputOptions = {};
+
+        if (singleuserInfo[0]?.goldcoins >= 5) {
+            InputOptions = {
+                GoldCoin: {
+                    "5": 5
+                }
+            };
+        }else if(singleuserInfo[0]?.goldcoins >= 10) {
+            InputOptions = {
+                GoldCoin: {
+                    "5": 5,
+                    "10":  10
+                }
+            };
+        }else{
+            InputOptions = {
+                GoldCoin: {
+                    "0": 0
+                }
+            };
+        }
+
         const { value: number } = await Swal.fire({
             title: `${title}`,
             color: "#FFFFFF",
@@ -38,7 +61,18 @@ const AllProduct = ({ allproduct }) => {
             showCancelButton: true,
             confirmButtonText: "Next",
         })
-        if(number){
+
+        if(singleuserInfo[0]?.goldcoins < 5){
+            Swal.fire({
+                title: `You have ${singleuserInfo[0]?.goldcoins} GoldCoins Only `,
+                color: "#FFFFFF",
+                background: "linear-gradient(to right, #2F4F4F, rgba(135, 206, 250, 0.5))",
+                html: `<b>Earn minimum 5 Gold Coins</b> <br>
+                `,
+                showCancelButton: true,
+            })
+        }
+        if (number && singleuserInfo[0]?.goldcoins >= 5) {
             const { value: coin } = await Swal.fire({
                 title: `${number} ${title} is selected for order `,
                 color: "#FFFFFF",
@@ -51,11 +85,7 @@ const AllProduct = ({ allproduct }) => {
                 inputAttributes: {
                     style: 'background-color: #708090' // Change the color to your desired color
                 },
-                inputOptions: {
-                    Quantity: {
-                        5: "5",
-                    }
-                },
+                inputOptions:  InputOptions,
                 showCancelButton: true,
                 confirmButtonText: "Next",
             })
@@ -82,28 +112,28 @@ const AllProduct = ({ allproduct }) => {
                     }
                 });
                 if (formValues) {
-                    const [selectedQuantity, enteredPhone, enteredAddress , usecoin] = formValues;
+                    const [selectedQuantity, enteredPhone, enteredAddress, usecoin] = formValues;
                     setAmount(selectedQuantity);
                     setPhone(enteredPhone);
                     setAddress(enteredAddress);
                     setCoin(usecoin)
                     const orderdata = {
-                        Product : title ,
-                        ProdcutAmount : amount , 
-                        OrderAdress : address ,
-                        PhoneNumber : phone ,
-                        CoinUsed : usedcoin,
-                        useremail : singleuserInfo[0]?.email,
-                        
+                        Product: title,
+                        ProdcutAmount: amount,
+                        OrderAdress: address,
+                        PhoneNumber: phone,
+                        CoinUsed: usedcoin,
+                        useremail: singleuserInfo[0]?.email,
+
                     }
-                   console.log(orderdata );
-    
+                    console.log(orderdata);
+
                 }
             }
         }
-        
-        
-       
+
+
+
     }
     return (
         <div className="card w-auto text-white shadow-2xl  mb-3 border-2  bg-gradient-to-r from-slate-900/50   to-sky-950/70  lg:rounded-b-3xl border-b-2 border-sky-300 duration-500 hover:top-3 ">
