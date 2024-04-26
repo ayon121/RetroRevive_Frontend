@@ -38,7 +38,13 @@ import AddProduct from './Components/Dashboard/AddProduct';
 import Dashboard from './Components/Dashboard/Dashboard';
 import {Provider} from "react-redux"
 import Store from './app/Store';
+import ConnectWallet from './Components/Pages/ConnectWallet';
+import ProviderWeb3Model from './Providers/WalletProviders';
 
+
+// -------------web3 ----------------//
+
+// --------------------------------------------
 
 const queryClient = new QueryClient()
 
@@ -142,9 +148,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={Store}>
       <Authproviders>
+        <ProviderWeb3Model>
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
         </QueryClientProvider>
+        </ProviderWeb3Model>
       </Authproviders>
     </Provider>
 

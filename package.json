@@ -13,7 +13,8 @@
     "@reduxjs/toolkit": "^2.2.3",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.2.0",
-    "@tanstack/react-query": "^5.8.4",
+    "@tanstack/react-query": "^5.32.0",
+    "@web3modal/wagmi": "^4.1.11",
     "axios": "^1.6.2",
     "firebase": "^10.5.2",
     "localforage": "^1.10.0",
@@ -30,7 +31,9 @@
     "recharts": "^2.10.3",
     "sort-by": "^0.0.2",
     "sweetalert2": "^11.6.13",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "viem": "^2.9.27",
+    "wagmi": "^2.5.22"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

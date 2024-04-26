@@ -9,15 +9,16 @@ import useSingleUser from '../../Hooks/useSingleUser';
 
 // logo
 import logo from '../../assets/RetroLogo.png'
+import ConnectWallet from '../Pages/ConnectWallet';
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext)
     const [singleuserInfo, refetch] = useSingleUser()
-    const handlelogOut = () => {
-        logout()
-            .then()
-            .catch()
-    }
+    // const handlelogOut = () => {
+    //     logout()
+    //         .then()
+    //         .catch()
+    // }
     refetch()
 
     const navlinks = <>
@@ -62,8 +63,15 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        {
+                        {/* {
                             user ? <button onClick={handlelogOut} className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 rounded-2xl'>Logout</button>
+                                :
+                                <Link to="/login">
+                                    <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 rounded-2xl'>Login</button>
+                                </Link>
+                        } */}
+                        {
+                            user ? <ConnectWallet></ConnectWallet>
                                 :
                                 <Link to="/login">
                                     <button className='btn bg-white text-black font-bold hover:text-pink-600 border-black hover:border-pink-600 rounded-2xl'>Login</button>
